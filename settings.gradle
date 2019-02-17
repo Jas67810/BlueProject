@@ -1,0 +1,3 @@
+include ':app', ':unreble', ':core'
+project(':unreble').projectDir = new File('Framework/unreble')
+project(':core').projectDir = new File('Framework/core')

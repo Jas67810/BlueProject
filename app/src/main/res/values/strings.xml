@@ -1,0 +1,9 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Ble中央和周边</string>
+    <string name="main_central">中央\n Central</string>
+    <string name="central">中央</string>
+    <string name="periphera">周边</string>
+    <string name="main_periphera">周边\n Periphera</string>
+    <string name="clear_log">清除</string>
+    <string name="permission">应用需要权限 <xliff:g id="xxx">%1s</xliff:g></string>
+</resources>

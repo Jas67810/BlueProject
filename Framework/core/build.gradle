@@ -1,0 +1,26 @@
+apply from: "${rootProject.rootDir}/UnreBleConfig.gradle"
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    project.ext.setDefaultConfig project
+}
+
+dependencies {
+    // 导入 Support 包文件
+    api "com.android.support:appcompat-v7:$rootProject.androidSupportSdkVersion"
+    api "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
+    api "com.android.support:cardview-v7:$rootProject.androidSupportSdkVersion"
+    api "com.android.support:recyclerview-v7:$rootProject.androidSupportSdkVersion"
+    api "com.android.support:support-v4:$rootProject.androidSupportSdkVersion"
+    api "com.android.support:design:$rootProject.androidSupportSdkVersion"
+    api "com.android.support:support-annotations:$rootProject.androidSupportAnnotations"
+    api "com.android.support:support-vector-drawable:$rootProject.androidSupportSdkVersion"
+    //导入 kutter
+    //api "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
+    //annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
+    //MultiDex分包方法
+    api "com.android.support:multidex:$rootProject.multidex"
+    //QMUI
+    // api "com.qmuiteam:qmui:$rootProject.qmui"
+}

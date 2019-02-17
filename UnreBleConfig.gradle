@@ -1,0 +1,51 @@
+/*全局配置信息及第三方依赖统一管理*/
+project.ext {
+    //统一设置APP配置
+    setDefaultConfig = { extension ->
+        extension.android{
+            compileSdkVersion rootProject.compileSdkVersion
+            buildToolsVersion rootProject.buildToolsVersion
+            defaultConfig {
+                minSdkVersion rootProject.minSdkVersion
+                targetSdkVersion rootProject.targetSdkVersion
+                versionCode rootProject.versionCode
+                versionName rootProject.versionName
+                testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+                //Arouter路由配置
+                javaCompileOptions {
+                    annotationProcessorOptions {
+                        arguments = [moduleName: project.getName()]
+                    }
+                }
+            }
+            buildTypes {
+                release {
+                    minifyEnabled false
+                    proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+                }
+            }
+            compileOptions{
+                sourceCompatibility SOURCECOMPATIBILITY_JAVAVERSION
+                targetCompatibility TARGETCOMPATIBILITY_JAVAVERSION
+            }
+            buildTypes {
+                release {
+                    minifyEnabled false
+                    proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+                }
+            }
+            //防止编译的时候oom、GC
+            dexOptions {
+                javaMaxHeapSize "4g"
+            }
+            //解决.9图问题
+            aaptOptions {
+                cruncherEnabled = false
+                useNewCruncher = false
+            }
+        }
+        extension.dependencies {
+            implementation fileTree(include: ['*.jar'], dir: 'libs')
+        }
+    }
+}

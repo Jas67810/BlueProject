@@ -1,0 +1,10 @@
+apply from: "${rootProject.rootDir}/UnreBleConfig.gradle"
+apply plugin: 'com.android.library'
+
+android {
+    project.ext.setDefaultConfig project
+}
+
+dependencies {
+    api 'com.inuker.bluetooth:library:1.4.0'
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:clickable="false"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <LinearLayout style="@style/keypanel_title"
+        android:id="@+id/keypanel_up">
+        <ImageButton style="@style/keypanel_key"
+            android:id="@+id/key_power"
+            android:src="@mipmap/icon_power"
+            android:layout_weight="1"/>
+        <ImageButton style="@style/keypanel_key"
+            android:id="@+id/key_volumeup"
+            android:src="@mipmap/icon_volume_up"
+            android:layout_weight="1"/>
+        <ImageButton style="@style/keypanel_key"
+            android:id="@+id/key_volumedown"
+            android:src="@mipmap/icon_volume_down"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <com.unre.ble.UI.weight.RoundMenuView
+            android:id="@+id/key_roundview"
+            android:visibility="invisible"
+            android:layout_width="@dimen/keypanel_round_width"
+            android:layout_height="@dimen/keypanel_round_height" />
+    </LinearLayout>
+    <LinearLayout style="@style/keypanel_title"
+        android:id="@+id/keypanel_down">
+        <ImageButton style="@style/keypanel_key"
+            android:id="@+id/key_menu"
+            android:src="@mipmap/icon_menu"
+            android:layout_weight="1"/>
+        <ImageButton style="@style/keypanel_key"
+            android:id="@+id/key_home"
+            android:src="@mipmap/icon_home"
+            android:layout_weight="1"/>
+        <ImageButton style="@style/keypanel_key"
+            android:id="@+id/key_back"
+            android:src="@mipmap/icon_back"
+            android:layout_weight="1"/>
+    </LinearLayout>
+</LinearLayout>

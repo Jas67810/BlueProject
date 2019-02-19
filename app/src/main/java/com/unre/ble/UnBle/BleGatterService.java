@@ -21,15 +21,15 @@ import java.util.Set;
 
 public class BleGatterService extends BleService implements UnBleServiceListener {
     private final static String TAG = BleGatterService.class.getSimpleName();
-    public class UnBleGatterServiceBinder extends Binder{
-        public BleGatterService getUnBleGatterService(){
+    public class BleGatterServiceBinder extends Binder{
+        public BleGatterService getBleGatterService(){
             return BleGatterService.this;
         }
     }
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return new UnBleGatterServiceBinder();
+        return new BleGatterServiceBinder();
     }
     @Override
     public void onDestroy() {
@@ -65,7 +65,12 @@ public class BleGatterService extends BleService implements UnBleServiceListener
         Log.d(TAG, "onRegisteredDevicesChange:" + unBleGatterService.debugRegisteredDevices());
         EventUtils.postEvent(true, EventID.EVENTID_BLE_RECEIVER_DEVICESCHANGE, 0);
     }
-    ///////////////////////////////
+    @Override
+    public void onAdvertiseStateChange(boolean enable) {
+        Log.d(TAG, "onAdvertiseStateChange:" + enable);
+        EventUtils.postEvent(true, EventID.EVENTID_BLE_SERVICE_ADVERTISE, enable?1:0);
+    }
+    ////////////////////////////////////
     // API
     public Set<BluetoothDevice> getCurrentRegisteredDevices(){
         if(unBleGatterService != null){

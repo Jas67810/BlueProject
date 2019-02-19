@@ -3,7 +3,19 @@
     <string name="main_central">中央\n Central</string>
     <string name="central">中央</string>
     <string name="periphera">周边</string>
+    <string name="periphera_key">遥控</string>
     <string name="main_periphera">周边\n Periphera</string>
     <string name="clear_log">清除</string>
     <string name="permission">应用需要权限 <xliff:g id="xxx">%1s</xliff:g></string>
+    <string name="search">搜索</string>
+    <string name="searching">搜索中...</string>
+    <string name="connecting">连接中...</string>
+    <string name="connect_success">连接成功</string>
+    <string name="connect_params_fail">设备不匹配，请使用相应设备</string>
+    <string name="connect_fail">连接失败</string>
+    <string name="connect_try">断线重连中.....</string>
+    <string name="connect_ble">连接CW P1</string>
+    <string name="connect_switch">切换</string>
+    <string name="advertise_success">中央开启成功</string>
+    <string name="advertise_fail">中央开启失败</string>
 </resources>

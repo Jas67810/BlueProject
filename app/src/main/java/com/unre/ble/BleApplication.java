@@ -10,9 +10,16 @@ import com.squareup.leakcanary.LeakCanary;
 import com.unre.ble.Utils.OSUtils;
 
 public class BleApplication extends Application {
+
+    private static volatile BleApplication mInstance;
+    public static BleApplication getInstance() {
+        return mInstance;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
+        mInstance = this;
         if (LeakCanary.isInAnalyzerProcess(this)) {
             return;
         }

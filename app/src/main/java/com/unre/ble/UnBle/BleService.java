@@ -40,6 +40,10 @@ public abstract class BleService extends Service {
     protected void handleBleMessage(Message msg){
 
     }
+    protected synchronized Message createMessgae(int what){
+        mBleHandler.removeMessages(what);
+        return Message.obtain(mBleHandler, what);
+    }
     ////////////////////////////////////////////
     protected final static int BLE_MSG_INIT = 1;
     protected final static int BLE_MSG_BASE = 100;

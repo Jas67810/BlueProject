@@ -3,12 +3,11 @@ package com.unre.ble.EventBus;
 // Created by JasWorkSpace on 2019/1/25.
 // Copyright (c) 2019 Pinocchio_Android All rights reserved.
 
-import android.util.Log;
 
 public class EventUtils {
     //订阅事件
     public static void register(boolean alive, Object object){
-        Log.d("EventUtils","register:" + alive + ", " + object);
+        //Log.d("EventUtils","register:" + alive + ", " + object);
         if(alive){
             EventBusHelper.register(object);
         } else {
@@ -17,7 +16,7 @@ public class EventUtils {
     }
     //取消订阅
     public static void unregister(boolean alive, Object object){
-        Log.d("EventUtils","unregister:" + alive + ", " + object);
+        //Log.d("EventUtils","unregister:" + alive + ", " + object);
         if(alive){
             EventBusHelper.unregister(object);
         } else {

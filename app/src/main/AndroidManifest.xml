@@ -17,7 +17,6 @@
         <activity android:name=".UI.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -25,9 +24,14 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity android:name=".UI.activity.PeripheraActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
         <!-- 中央服务 -->
         <service android:name=".UnBle.BleGatterService"/>
-
+        <!-- 外围设备服务 -->
+        <service android:name=".UnBle.Client.BleClientService"/>
     </application>
 
 </manifest>

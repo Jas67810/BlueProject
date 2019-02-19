@@ -2,17 +2,28 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
-
-    <style name="mainbutton" parent="QMUI.RoundButton">
+    <style name="blebutton" parent="QMUI.RoundButton">
+        <item name="qmui_borderColor">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+    <style name="mainbutton" parent="blebutton">
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_weight">1</item>
         <item name="android:textSize">20sp</item>
         <item name="android:layout_margin">20dp</item>
-        <item name="qmui_borderColor">@color/colorAccent</item>
-        <item name="android:textColor">@color/colorAccent</item>
         <item name="android:singleLine">false</item>
     </style>
-
+    <style name="keypanel_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/keypanel_title_height</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="keypanel_key">
+        <item name="android:tint">@color/colorAccent</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:layout_height">@dimen/keypanel_key_height</item>
+        <item name="android:layout_width">@dimen/keypanel_key_width</item>
+        <item name="android:gravity">center</item>
+    </style>
 </resources>

@@ -11,11 +11,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.qmuiteam.qmui.widget.QMUIAppBarLayout;
 import com.qmuiteam.qmui.widget.QMUITopBarLayout;
+import com.qmuiteam.qmui.widget.dialog.QMUITipDialog;
 import com.unre.ble.EventBus.Event;
 import com.unre.ble.EventBus.EventID;
-import com.unre.ble.EventBus.EventUtils;
 import com.unre.ble.R;
 import com.unre.ble.R2;
 import com.unre.ble.UI.Base.BleBaseFragment;
@@ -23,6 +22,7 @@ import com.unre.ble.UI.weight.LogView;
 import com.unre.ble.UnBle.BleDataParser;
 import com.unre.ble.UnBle.BleGatterServiceHelper;
 import com.unre.unreface.Base.BaseState;
+import com.unre.unreface.Utils.ToastUtils;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -43,32 +43,21 @@ public class FragmentCentral extends BleBaseFragment {
     public void clearLog(){
         logView.cleanLog();
     }
+    private QMUITipDialog notifyQMUITipDialog;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mBleGatterServiceHelper = new BleGatterServiceHelper(getContext());
-        mBleGatterServiceHelper.bindBleGatterService();
+        setupBleGatterService();
     }
     @Override
     protected View onCreateView() {
-        View view = View.inflate(getContext(), R.layout.fragment_central, null);
-        mUnbinder = ButterKnife.bind(this, view);
-        return view;
+        return View.inflate(getContext(), R.layout.fragment_central, null);
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ButterKnife.bind(this, view);
         qmuiTopBarLayout.setTitle(R.string.central);
-    }
-    @Override
-    public void onResume() {
-        super.onResume();
-        mBleGatterServiceHelper.bindBleGatterService();//make sure its bind.
-    }
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        mBleGatterServiceHelper.unbindBleGatterService();
     }
     //////////////////////////////////
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -76,8 +65,8 @@ public class FragmentCentral extends BleBaseFragment {
         Log.d(TAG,"onEvent:" + event);
         switch (event.id){
             case EventID.EVENTID_BLE_RECEIVER_KEYCODE:{
-                if(getmBaseState() == BaseState.BASE_STATE_ONPAUSE){
-                    Toast.makeText(getContext(), BleDataParser.tranformKEYCODE(event.arg1), Toast.LENGTH_SHORT).show();
+                if(getmBaseState() == BaseState.BASE_STATE_ONRESUME){
+                    ToastUtils.showShort(getContext(), BleDataParser.tranformKEYCODE(event.arg1));
                 }
             }break;
             case EventID.EVENTID_BLE_RECEIVER_DATA:{
@@ -99,6 +88,36 @@ public class FragmentCentral extends BleBaseFragment {
                     e.printStackTrace();
                 }
             }break;
+            case EventID.EVENTID_BLE_SERVICE_ADVERTISE:{
+                //if(getmBaseState() == BaseState.BASE_STATE_ONPAUSE){
+                notifyAdvertiseStateChange(event.arg1);
+                //}
+            }break;
+        }
+    }
+
+    private void notifyAdvertiseStateChange(int state){
+        if(getContext() != null) {
+            if(state == 1){
+                notifyQMUITipDialog = new QMUITipDialog.Builder(getContext())
+                        .setIconType(QMUITipDialog.Builder.ICON_TYPE_SUCCESS)
+                        .setTipWord(getString(R.string.advertise_success))
+                        .create();
+            } else if(state == 0) {
+                notifyQMUITipDialog = new QMUITipDialog.Builder(getContext())
+                        .setIconType(QMUITipDialog.Builder.ICON_TYPE_FAIL)
+                        .setTipWord(getString(R.string.advertise_fail))
+                        .create();
+            }
+            if(notifyQMUITipDialog != null){
+                notifyQMUITipDialog.show();
+                getView().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        notifyQMUITipDialog.dismiss();
+                    }
+                }, 1500);
+            }
         }
     }
 }

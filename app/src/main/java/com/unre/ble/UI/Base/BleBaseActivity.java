@@ -5,8 +5,7 @@ package com.unre.ble.UI.Base;
 
 import android.widget.Toast;
 
-import com.unre.ble.EventBus.Event;
-import com.unre.ble.EventBus.EventBusHelper;
+import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.unre.ble.EventBus.EventUtils;
 import com.unre.ble.EventBus.UnUseEvent;
 import com.unre.ble.R;
@@ -38,7 +37,10 @@ public class BleBaseActivity extends BaseActivity implements IPermissionListener
         super.onStop();
         EventUtils.unregister(true, this);
     }
-
+    @Override
+    protected int backViewInitOffset() {
+        return QMUIDisplayHelper.dp2px(this, 100);
+    }
     ////////////////////////////////////////////////////////////////////
     /// 获取权限
     private volatile PermissionsHelper mPermissionsHelper;

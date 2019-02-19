@@ -131,6 +131,7 @@ public class UnBleGatterService extends UnBleImpl {
                 .setIncludeDeviceName(true)
                 .setIncludeTxPowerLevel(false)
                 .addServiceUuid(new ParcelUuid(UnBleProfile.UNBLE_SERVICE))
+                //.addManufacturerData(UnBleProfile.MAINFACTURERID, UnBleProfile.MAINFACTURER) //严格的ID进行过滤
                 .build();
         mBluetoothLeAdvertiser
                 .startAdvertising(settings, data, mAdvertiseCallback);
@@ -144,11 +145,13 @@ public class UnBleGatterService extends UnBleImpl {
         public void onStartSuccess(AdvertiseSettings settingsInEffect) {
             super.onStartSuccess(settingsInEffect);
             Log.i(TAG, "######## LE Advertise Started ###########");
+            notifyAdvertiseStateChange(true);
         }
         @Override
         public void onStartFailure(int errorCode) {
             super.onStartFailure(errorCode);
             Log.w(TAG, "######### LE Advertise Failed: "+errorCode + " #########");
+            notifyAdvertiseStateChange(false);
         }
     };
     ////////////////////////////////////////////////////////////////////////////
@@ -158,6 +161,7 @@ public class UnBleGatterService extends UnBleImpl {
             if (newState == BluetoothProfile.STATE_CONNECTED) {
                 Log.i(TAG, "BluetoothDevice CONNECTED: " + device);
                 if(mRegisteredDevices.add(device)){
+                    //Log.i(TAG, "mRegisteredDevices BluetoothDevice CONNECTED: " + debugRegisteredDevices());
                     notifyRegisteredDevicesChange();
                 }
             } else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
@@ -317,11 +321,18 @@ public class UnBleGatterService extends UnBleImpl {
         }
     }
     private synchronized void notifyRegisteredDevicesChange(){
-        Log.d(TAG, "notifyRegisteredDevicesChange:" + debugRegisteredDevices());
+        //Log.d(TAG, "notifyRegisteredDevicesChange:" + debugRegisteredDevices());
         if(unBleServiceListener!=null){
             unBleServiceListener.onRegisteredDevicesChange();
         } else {
             Log.d(TAG, "notifyRegisteredDevicesChange but no listener");
+        }
+    }
+    private synchronized void notifyAdvertiseStateChange(boolean change){
+        if(unBleServiceListener!=null){
+            unBleServiceListener.onAdvertiseStateChange(change);
+        } else {
+            Log.d(TAG, "notifyAdvertiseStateChange but no listener");
         }
     }
     /////////////////////////////

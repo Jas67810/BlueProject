@@ -34,7 +34,7 @@ public class LogView extends LinearLayout {
     }
     //////////////////////////////////////////////
     public void addLog(String log){
-        mLogTextView.append(mLogTextView.getText() + log);
+        mLogTextView.setText(mLogTextView.getText() + log);
     }
     public void cleanLog(){
         mLogTextView.setText("");

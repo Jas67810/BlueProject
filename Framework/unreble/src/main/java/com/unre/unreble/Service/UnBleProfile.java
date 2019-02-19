@@ -13,7 +13,10 @@ import java.util.UUID;
 public class UnBleProfile {
 
     private static final String TAG = UnBleProfile.class.getSimpleName();
-
+    /* manufacturer */
+    public static int MAINFACTURERID = 0x7777;
+    public static byte[] MAINFACTURER = new byte[]{0x07, 0x07};
+    public static String KEY_UUID = "0000";//以下UUID的前面4位，用于客户端服务校验
     /* Current Time Service UUID */
     public static UUID UNBLE_SERVICE = UUID.fromString("00001805-0000-1000-8000-00805f9b34fb");
     /* Mandatory Current Time Information Characteristic */

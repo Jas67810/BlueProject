@@ -32,6 +32,7 @@ public class MainActivity extends BleBaseFragmentActivity {
     }
     @OnClick(R2.id.periphera)
     public void onCLickPeriphera(){
-        Toast.makeText(this, "外围设备模块功能待开发", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "外围设备模块功能待开发", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this, PeripheraActivity.class));
     }
 }

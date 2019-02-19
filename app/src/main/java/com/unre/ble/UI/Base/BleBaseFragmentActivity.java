@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
 
-import com.unre.ble.EventBus.Event;
 import com.unre.ble.EventBus.EventUtils;
 import com.unre.ble.EventBus.UnUseEvent;
 import com.unre.ble.R;
@@ -84,5 +83,4 @@ public class BleBaseFragmentActivity extends BaseFragmentActivity implements IPe
     public void onSettingsPermissionsResult(){
 
     }
-
 }

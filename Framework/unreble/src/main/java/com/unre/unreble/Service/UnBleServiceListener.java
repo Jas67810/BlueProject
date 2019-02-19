@@ -6,4 +6,5 @@ package com.unre.unreble.Service;
 public interface UnBleServiceListener {
     void onCharacteristicWrite(int offset, byte[] value);
     void onRegisteredDevicesChange();
+    void onAdvertiseStateChange(boolean enable);
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="keypanel_key_height">45dp</dimen>
+    <dimen name="keypanel_key_width">@dimen/keypanel_key_height</dimen>
+    <dimen name="keypanel_title_height">50dp</dimen>
+    <dimen name="keypanel_round_height">250dp</dimen>
+    <dimen name="keypanel_round_width">@dimen/keypanel_round_height</dimen>
+    <dimen name="searchdevice_item_minheight">80dp</dimen>
+    <dimen name="searchdevice_item_icon_minheight">40dp</dimen>
+    <dimen name="searchdevice_item_textview_padding">5dp</dimen>
+    <dimen name="searchdevice_item_layout_padding">10dp</dimen>
+    <dimen name="connect_layout_margin_buttom">100dp</dimen>
+</resources>

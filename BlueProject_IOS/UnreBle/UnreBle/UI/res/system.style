@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<styles>
+    <style name="s1">
+        <attr name="bgColor">#333333</attr>
+    </style>
+    <style name="s2">
+        <attr name="bgColor">#666666</attr>
+    </style>
+    <style name="s3">
+        <attr name="bgColor">white</attr>
+        <attr name="fontSize">16</attr>
+        <attr name="color">#333333</attr>
+    </style>
+    <style name="lineSep">
+        <attr name="height">1</attr>
+        <attr name="bgColor">#e6e6e6</attr>
+    </style>
+    <style name="filterLeftLabel">
+        <attr name="fontSize">14</attr>
+        <attr name="color">#333333</attr>
+    </style>
+    <style name="rightContent">
+        <attr name="fontSize">14</attr>
+        <attr name="color">#333333</attr>
+        <attr name="textAlign">right</attr>
+    </style>
+    <style name="filterRow">
+        <attr name="height">44</attr>
+        <attr name="flexDirection">row</attr>
+        <attr name="alignItems">center</attr>
+        <attr name="paddingLeft">14</attr>
+        <attr name="paddingRight">8</attr>
+        <attr name="justifyContent">space-between</attr>
+    </style>
+    <style name="button">
+        <attr name="height">44</attr>
+        <attr name="width">150</attr>
+        <attr name="alignItems">center</attr>
+        <attr name="justifyContent">center</attr>
+        <attr name="margin">20</attr>
+    </style>
+    <style name="buttonAttr">
+        <attr name="bgColor">#e5e5e5</attr>
+        <attr name="borderRadius">4</attr>
+        <attr name="clipsToBounds">true</attr>
+        <attr name="underlayColor">darkGray</attr>
+    </style>
+    <style name="buttonText">
+        <attr name="fontSize">16</attr>
+        <attr name="color">#333333</attr>
+    </style>
+    <style name="bigFont">
+        <attr name="fontSize">30</attr>
+        <attr name="color">#333333</attr>
+    </style>
+    <style name="border">
+        <attr name="borderRadius">4</attr>
+        <attr name="borderWidth">1</attr>
+        <attr name="borderColor">lightGray</attr>
+    </style>
+    <style name="redBorder">
+        <attr name="borderRadius">8</attr>
+        <attr name="borderWidth">1</attr>
+        <attr name="borderColor">red</attr>
+    </style>
+    <style name="redBorder1">
+        <attr name="borderRadius">8</attr>
+        <attr name="borderWidth">3</attr>
+        <attr name="borderColor">red</attr>
+    </style>
+    <style name="settingslistitemlayout">
+        <attr name="padding">10</attr>
+        <attr name="height">50</attr>
+        <attr name="width">100%</attr>
+        <attr name="flexDirection">row</attr>
+        <attr name="alignItems">center</attr>
+        <attr name="justifyContent">space-around</attr>
+    </style>
+    <style name="settingslistitemattr">
+        <attr name="bgColor">white</attr>
+        <attr name="underlayColor">#bbffffff</attr>
+    </style>
+    
+    <style name="settingsitemlayout">
+        <attr name="paddingLeft">20</attr>
+        <attr name="paddingRight">20</attr>
+        <attr name="height">50</attr>
+        <attr name="width">100%</attr>
+        <attr name="flexDirection">row</attr>
+        <attr name="alignItems">center</attr>
+        <attr name="justifyContent">space-around</attr>
+    </style>
+    <style name="settingsindicatorlayout">
+        <attr name="width">100%</attr>
+        <attr name="height">1</attr>
+        <attr name="alignItems">center</attr>
+        <attr name="justifyContent">space-around</attr>
+    </style>
+    <style name="settingsindicatorattr">
+        <attr name="bgColor">#00000000</attr>
+    </style>
+    <style name="settingsitemattr">
+        <attr name="bgColor">white</attr>
+        <attr name="underlayColor">#FAFAFA</attr>
+    </style>
+    <style name="arcapturestudioitemlayout">
+        <attr name="width">100%</attr>
+        <attr name="height">320</attr>
+        <attr name="alignItems">center</attr>
+        <attr name="justifyContent">space-around</attr>
+    </style>
+    <style name="simulationstudioitemlayout">
+        <attr name="width">100%</attr>
+        <attr name="height">360</attr>
+        <attr name="alignItems">center</attr>
+        <attr name="justifyContent">space-around</attr>
+    </style>
+    <style name="homev2celllayout">
+        <attr name="flex">1</attr>
+        <attr name="height">100</attr>
+        <attr name="maxWidth">200</attr>
+        <attr name="margin">5</attr>
+    </style>
+    
+    <style name="homev2cell">
+        <attr name="borderRadius">8</attr>
+        <attr name="scaleonSelected">true</attr>
+    </style>
+    <style name="customnavbar">
+        <attr name="width">100%</attr>
+        <attr name="height">100</attr>
+        <attr name="justifyContent">space-between</attr>
+        <attr name="alignItems">center</attr>
+    </style>
+    
+    <style name="iconimage">
+        <attr name="width">30</attr>
+        <attr name="height">30</attr>
+        <attr name="justifyContent">space-between</attr>
+        <attr name="alignItems">center</attr>
+    </style>
+    <style name="iconimagecontent">
+        <attr name="width">25%</attr>
+        <attr name="height">50</attr>
+        <attr name="justifyContent">space-around</attr>
+        <attr name="alignItems">center</attr>
+        <attr name="flex">1</attr>
+    </style>
+    <style name="iconimagecontentattr">
+        <attr name="bgColor">white</attr>
+        <attr name="underlayColor">#c0c0c0</attr>
+    </style>
+</styles>

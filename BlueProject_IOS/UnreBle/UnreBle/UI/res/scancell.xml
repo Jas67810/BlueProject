@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView layout="flex:1,flexDirection:row,paddingLeft:20,paddingRight:20,paddingBottom:5,paddingTop:5" attr="">
+    <!--timeline-->
+    <UIImageView name="icon" layout="height:60,width:60" attr="source:ble_icon"/>
+    <!-- contentView -->
+    <UIView layout="marginLeft:5,flex:1,height:100%,justifyContent:space-between,flexDirection:row,minHeight:80" attr="">
+        <UIView layout="flex:1,width:100%,justifyContent:space-around">
+            <UILabel name="names" layout="flex:1,height:25%" attr="fontSize:20,color:#000000,linesNum:0"/>
+            <UILabel name="mac" layout="flex:1,height:25%,marginTop:5,marginBottom:5" attr="fontSize:15,color:#c0c0c0,linesNum:0"/>
+            <UILabel name="other" layout="flex:1,height:25%" attr="fontSize:15,color:#c0c0c0,linesNum:0"/>
+        </UIView>
+        <UILabel name="rssi" layout="margin:10" attr="fontSize:30,color:#008577"/>
+    </UIView>
+</UIView>

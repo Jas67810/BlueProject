@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UIView layout="flex:1,paddingLeft:20,paddingRight:20,paddingBottom:50,paddingTop:100" attr="">
+    <!--top-->
+    <UIView layout="height:50,width:100%,justifyContent:space-around,flexDirection:row" attr="">
+        <FlexTouchView  onPress="onPower" layout="@:system/iconimagecontent"
+            attr="@:system/iconimagecontentattr">
+            <UIImageView name="power" layout="@:system/iconimage" attr="source:icon_power"/>
+        </FlexTouchView>
+        <FlexTouchView  onPress="onVolueUp" layout="@:system/iconimagecontent"
+            attr="@:system/iconimagecontentattr">
+            <UIImageView name="volueup" layout="@:system/iconimage" attr="source:icon_volue_up"/>
+        </FlexTouchView>
+        <FlexTouchView  onPress="onVolueDown" layout="@:system/iconimagecontent"
+            attr="@:system/iconimagecontentattr">
+            <UIImageView name="voluedown" layout="@:system/iconimage" attr="source:icon_volue_down"/>
+        </FlexTouchView>
+    </UIView>
+    <!-- contentView -->
+    <UIView layout="margin:5,flex:1,height:100%,justifyContent:space-around,alignItems:center" >
+        <YaoKong name="yaokong" layout="height:300,width:300" attr=""/>
+    </UIView>
+    <!-- buttom -->
+    <UIView layout="height:50,width:100%,justifyContent:space-around,flexDirection:row" attr="">
+        <FlexTouchView  onPress="onMenu" layout="@:system/iconimagecontent"
+            attr="@:system/iconimagecontentattr">
+            <UIImageView name="menu" layout="@:system/iconimage" attr="source:icon_menu"/>
+        </FlexTouchView>
+        <FlexTouchView  onPress="onHome" layout="@:system/iconimagecontent"
+            attr="@:system/iconimagecontentattr">
+            <UIImageView name="home" layout="@:system/iconimage" attr="source:icon_home"/>
+        </FlexTouchView>
+        <FlexTouchView  onPress="onBack" layout="@:system/iconimagecontent"
+            attr="@:system/iconimagecontentattr">
+            <UIImageView name="back" layout="@:system/iconimage" attr="source:icon_back"/>
+        </FlexTouchView>
+    </UIView>
+</UIView>
+
